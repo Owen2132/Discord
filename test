@@ -1,0 +1,22 @@
+local KEY = ""-- ----KEY
+local KeyLink = ""-- --KEY LINK
+loadstring(game:HttpGet"https://raw.githubusercontent.com/MadGics/Madgics/main/Estembirdu")()
+local library = loadstring(game:HttpGet"https://pastebinp.com/raw/HfURHRuq")()
+local Key = library:CreateWindow"Key System"
+Key:AddBox{ text = "Put Key Here", flag = "Key" }
+Key:AddButton{
+    text = "Enter key",
+    callback = function()
+        if tostring(library.flags.Key) ~= "" and string.gsub(tostring(library.flags.Key), " ", "") == KEY then
+            library:DeleteUi()
+            warn"KEY IS CORRECT!"
+            -- -SCRIPT!!!
+        end
+    end
+}
+Key:AddButton{
+    text = "Copy Key Link",
+    callback = function() spawn(function() setclipboard(KeyLink) end) end
+}
+Key:AddButton{ text = "Destroy Gui", callback = function() library:DeleteUi() end }
+library:Init()
